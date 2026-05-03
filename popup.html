@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 0 0 8px 0;
+      color: #e94560;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    button {
+      background-color: #e94560;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+    button:hover {
+      background-color: #c73d54;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #0f0f1a;
+      color: white;
+      box-sizing: border-box;
+    }
+    .file-list {
+      margin: 12px 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: #0f0f1a;
+      border-radius: 8px;
+      padding: 8px;
+    }
+    .file-item {
+      padding: 6px;
+      font-size: 12px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #e94560;
+      cursor: pointer;
+      width: auto;
+      margin: 0;
+      padding: 0 4px;
+    }
+    .status {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #4ade80;
+      text-align: center;
+    }
+    .error {
+      color: #f87171;
+    }
+  </style>
+</head>
+<body>
+  <h1>PDF Ninja</h1>
+  <div class="subtitle">Merge PDF files — locally, privately</div>
+
+  <input type="file" id="fileInput" multiple accept=".pdf" />
+  
+  <div id="fileList" class="file-list"></div>
+  
+  <button id="mergeBtn">Merge Selected PDFs</button>
+  
+  <div id="status" class="status"></div>
+
+  <script src="pdf-lib.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

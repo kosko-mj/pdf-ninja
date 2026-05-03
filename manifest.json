@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Ninja",
+  "version": "1.0.0",
+  "description": "Merge multiple PDF files into one — locally, privately, no uploads.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PDF Ninja"
+  }
+}
