@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Ninja Pro</title>
+
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <!-- GLOBAL LOGO (Always at the top) -->
+    <div class="logo-container">
+        <div class="logo">
+            <div class="logo-box">
+                <!-- 4-Point Ninja Shuriken SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" />
+                </svg>
+            </div>
+            <h2>PDF <span>NINJA</span> PRO</h2>
+        </div>
+    </div>
+
+    <!-- 1. THE PAYWALL -->
+    <div id="paywall-screen" style="display:none; text-align:center;">
+        <p style="color: var(--gray); margin-bottom: 20px;">Unlock unlimited PDF merging and professional reordering.</p>
+        <button id="pay-button">UPGRADE TO PRO</button>
+    </div>
+
+    <!-- 2. THE APP -->
+    <div id="app-screen" style="display: none;">
+        <div class="upload-area">
+            <label for="fileInput" id="custom-upload-btn">＋ ADD PDF FILES</label>
+            <input type="file" id="fileInput" multiple accept="application/pdf" style="display: none;">
+        </div>
+
+        <div id="fileList">
+            <!-- Files will appear here -->
+        </div>
+
+        <button id="mergeBtn">Merge PDFs</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="pdf-lib.min.js"></script>
+    <script src="ExtPay.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

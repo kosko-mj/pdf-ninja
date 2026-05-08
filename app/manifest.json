@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Ninja Pro",
+  "version": "1.0",
+  "description": "Advanced offline PDF processing with Ninja speed.",
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://extensionpay.com/*"],
+      "js": ["ExtPay.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
