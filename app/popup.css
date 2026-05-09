@@ -98,6 +98,45 @@ h2 span { color: var(--accent); }
     background: #151515;
 }
 
+.file-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+#fileNameInput {
+    flex: 1;
+    background: #111;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#fileNameInput:focus {
+    border-color: var(--accent);
+}
+
+#clearAllBtn {
+    flex-shrink: 0;
+    background: transparent;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+
+#clearAllBtn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 /* FILE LIST */
 #fileList {
     margin: 20px 0;
@@ -207,3 +246,14 @@ h2 span { color: var(--accent); }
     overflow: hidden; 
     text-overflow: ellipsis; 
 }
+
+/* Rapid spin for processing */
+.spinning {
+    animation: ninja-spin 0.8s linear infinite;
+}
+
+@keyframes ninja-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+

@@ -11,20 +11,49 @@
     <div class="logo-container">
         <div class="logo">
             <div class="logo-box">
-                <!-- 4-Point Ninja Shuriken SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" />
-                </svg>
-            </div>
+    <!-- 4-Point Ninja Shuriken SVG -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" />
+    </svg>
+</div>
             <h2>PDF <span>NINJA</span> PRO</h2>
         </div>
     </div>
 
     <!-- 1. THE PAYWALL -->
-    <div id="paywall-screen" style="display:none; text-align:center;">
-        <p style="color: var(--gray); margin-bottom: 20px;">Unlock unlimited PDF merging and professional reordering.</p>
-        <button id="pay-button">UPGRADE TO PRO</button>
+    <div id="paywall-screen" class="screen">
+    <div class="paywall-header">
+        <h2>Upgrade to PDF Ninja Pro</h2>
+        <p>Unlimited merges, 100% privacy, and professional naming.</p>
     </div>
+
+    <div class="pricing-container">
+        <!-- Monthly Plan -->
+        <div class="plan-card">
+            <span class="plan-name">Monthly Pro</span>
+            <span class="plan-price">$7.99<small>/mo</small></span>
+            <p class="plan-desc">Flexible monthly access</p>
+        </div>
+
+        <!-- Annual Plan (The Highlight) -->
+        <div class="plan-card featured">
+            <span class="badge">BEST VALUE - SAVE 50%</span>
+            <span class="plan-name">Annual Ninja</span>
+            <span class="plan-price">$49.00<small>/yr</small></span>
+            <p class="plan-desc">Just $4.08/mo - billed annually.</p>
+        </div>
+    </div>
+
+    <ul class="benefit-list">
+        <li>✅ <strong>Local Processing:</strong> Files never leave your PC.</li>
+        <li>✅ <strong>Unlimited Use:</strong> No daily limits or file size caps.</li>
+        <li>✅ <strong>Smart Naming:</strong> Custom file naming & cleanup.</li>
+        <li>🚀 <strong>Future Updates:</strong> Compression & Extraction included.</li>
+    </ul>
+
+    <button id="payBtn" class="primary-btn">View Plans & Upgrade</button>
+    <p class="footer-note">Secure payment via Stripe. No credit card stored.</p>
+</div>
 
     <!-- 2. THE APP -->
     <div id="app-screen" style="display: none;">
@@ -35,6 +64,11 @@
 
         <div id="fileList">
             <!-- Files will appear here -->
+        </div>
+
+        <div class="file-controls" id="fileControls" style="display: none;">
+            <input type="text" id="fileNameInput" placeholder="Name your merged file...">
+            <button id="clearAllBtn">Clear All</button>
         </div>
 
         <button id="mergeBtn">Merge PDFs</button>
