@@ -234,30 +234,36 @@ footer {
     display: inline-block;
 }
 
-/* Roadmap Styles */
-.roadmap-header {
-    margin-top: 15px;
-    color: #ffcc00; /* Use your Ninja Gold/Yellow */
-    font-size: 0.9rem;
-    list-style: none;
+.pricing-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+.coming-soon-pill {
+    font-size: 0.6rem;
+    background: rgba(255, 204, 0, 0.15);
+    color: #ffcc00;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 5px;
+    vertical-align: middle;
 }
 
 .roadmap-item {
     font-size: 0.85rem;
-    color: #a0a0a0; /* Slightly dimmed to show they are 'upcoming' */
-    padding-left: 10px;
-    margin-bottom: 5px;
-    list-style: none;
+    color: #888; /* Dimmed out text */
+    padding-left: 22px; /* Align with the text above it */
+    margin-top: 5px;
+    position: relative;
 }
 
-.roadmap-item span {
-    color: #ffcc00;
-    margin-right: 5px;
-}
-
-/* Ensure the featured card is tall enough to show the list */
-.price-card.featured {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* Add a simple bullet instead of a checkmark */
+.roadmap-item::before {
+    content: "○";
+    position: absolute;
+    left: 5px;
+    color: #555;
 }
