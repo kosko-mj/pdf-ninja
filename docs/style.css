@@ -234,39 +234,45 @@ footer {
     display: inline-block;
 }
 
-/* Fix the header icon spacing */
-.roadmap-header i {
-    margin-right: 8px; /* This fixes the 'too close' issue */
-    vertical-align: middle;
-    color: #ffcc00;
-}
-
-/* Ensure roadmap items DON'T have green checks */
+/* 1. Force the Roadmap items to hide any automatic icons/bullets */
 .roadmap-item {
-    font-size: 0.85rem;
-    color: #888;
-    padding-left: 0; 
-    margin-top: 8px;
-    list-style: none; /* Removes any default bullets */
+    list-style: none !important;
     display: flex;
     align-items: center;
+    color: #888 !important;
+    padding-left: 0 !important;
+    margin-top: 8px;
 }
 
-/* Add a subtle 'dot' using a Remix Icon style or simple bullet */
-.roadmap-item::before {
-    content: "•"; /* A simple neutral bullet */
-    margin-right: 10px;
-    color: #444;
-    font-weight: bold;
+/* 2. Target any 'i' tags (icons) that might be inside roadmap-item and hide them */
+/* This is likely where the "ghost" green checks are coming from */
+.roadmap-item i {
+    display: none !important; 
 }
 
-/* If your CSS has a general rule adding green checks to <li>, 
-   we need to override it specifically for roadmap items: */
-.pricing .price-card ul li i.ri-check-line {
-    color: #2ecc71; /* Your green color */
-}
-
-/* This part ensures the roadmap header icon ISN'T green */
-.roadmap-header i.ri-rocket-line {
+/* 3. Space out the Roadmap title and the Coming Soon pill */
+.roadmap-header {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* This creates the space you need */
+    margin-top: 15px;
     color: #ffcc00 !important;
+}
+
+.coming-soon-pill {
+    margin-left: auto; /* Pushes the pill to the right, or use a fixed margin */
+    font-size: 0.65rem;
+    background: rgba(255, 204, 0, 0.1);
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    color: #ffcc00;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* 4. Add the neutral bullet back manually so it doesn't look like a check */
+.roadmap-item::before {
+    content: "•"; 
+    margin-right: 12px;
+    color: #444;
 }
