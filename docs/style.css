@@ -233,3 +233,31 @@ footer {
     margin-bottom: 1.5rem;
     display: inline-block;
 }
+
+/* Roadmap Styles */
+.roadmap-header {
+    margin-top: 15px;
+    color: #ffcc00; /* Use your Ninja Gold/Yellow */
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.roadmap-item {
+    font-size: 0.85rem;
+    color: #a0a0a0; /* Slightly dimmed to show they are 'upcoming' */
+    padding-left: 10px;
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+.roadmap-item span {
+    color: #ffcc00;
+    margin-right: 5px;
+}
+
+/* Ensure the featured card is tall enough to show the list */
+.price-card.featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
