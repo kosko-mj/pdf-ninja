@@ -234,36 +234,39 @@ footer {
     display: inline-block;
 }
 
-.pricing-divider {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 15px 0;
-}
-
-.coming-soon-pill {
-    font-size: 0.6rem;
-    background: rgba(255, 204, 0, 0.15);
-    color: #ffcc00;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-left: 5px;
+/* Fix the header icon spacing */
+.roadmap-header i {
+    margin-right: 8px; /* This fixes the 'too close' issue */
     vertical-align: middle;
+    color: #ffcc00;
 }
 
+/* Ensure roadmap items DON'T have green checks */
 .roadmap-item {
     font-size: 0.85rem;
-    color: #888; /* Dimmed out text */
-    padding-left: 22px; /* Align with the text above it */
-    margin-top: 5px;
-    position: relative;
+    color: #888;
+    padding-left: 0; 
+    margin-top: 8px;
+    list-style: none; /* Removes any default bullets */
+    display: flex;
+    align-items: center;
 }
 
-/* Add a simple bullet instead of a checkmark */
+/* Add a subtle 'dot' using a Remix Icon style or simple bullet */
 .roadmap-item::before {
-    content: "○";
-    position: absolute;
-    left: 5px;
-    color: #555;
+    content: "•"; /* A simple neutral bullet */
+    margin-right: 10px;
+    color: #444;
+    font-weight: bold;
+}
+
+/* If your CSS has a general rule adding green checks to <li>, 
+   we need to override it specifically for roadmap items: */
+.pricing .price-card ul li i.ri-check-line {
+    color: #2ecc71; /* Your green color */
+}
+
+/* This part ensures the roadmap header icon ISN'T green */
+.roadmap-header i.ri-rocket-line {
+    color: #ffcc00 !important;
 }
