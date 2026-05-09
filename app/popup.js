@@ -228,3 +228,37 @@ mergeBtn.addEventListener('click', async () => {
 
 // Initial Run
 updateUI();
+
+// --- Theme Management ---
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+const applyTheme = (theme) => {
+    // This applies the [data-theme] attribute to the <html> element
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Switch the Remix Icon class
+    if (themeIcon) {
+        themeIcon.className = theme === 'light' ? 'ri-moon-line' : 'ri-sun-line';
+    }
+};
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        
+        applyTheme(next);
+        chrome.storage.local.set({ theme: next });
+    });
+}
+
+// Check for saved theme preference on popup load
+chrome.storage.local.get('theme', (result) => {
+    if (result.theme) {
+        applyTheme(result.theme);
+    } else {
+        // Default to dark mode if nothing is saved
+        applyTheme('dark');
+    }
+});

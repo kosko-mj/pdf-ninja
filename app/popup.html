@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>PDF Ninja Pro</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -74,6 +75,15 @@
         <button id="mergeBtn">Merge PDFs</button>
         <div id="status" class="status"></div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <button id="theme-toggle" class="theme-btn" title="Switch Theme">
+                <i class="ri-sun-line" id="theme-icon"></i>
+            </button>
+            <span class="version-text">PDF Ninja Pro v2.0</span>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="pdf-lib.min.js"></script>
